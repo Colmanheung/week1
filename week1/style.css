@@ -1,0 +1,13 @@
+h3{
+    color: blanchedalmond;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+/* table and td,th cannot put on style.css */
+td, th{
+    border: 1px solid #000;
+    text-align: left;
+    padding: 10px;
+}

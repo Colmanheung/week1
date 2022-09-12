@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta charset="UTF-8" /> -->
+        <!-- <meta http-equiv="X-UA-compatible" content="IE=edge"/> -->
+        <title>
+            Week1_Task
+        </title>
+        <style>
+            h2{
+                color: aqua;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            table{
+                border-collapse: collapse;
+                width: 100%;
+            }
+            /* table and td,th cannot put on style.css */
+            td, th{
+                border: 1px solid #000;
+                text-align: left;
+                padding: 10px;
+            }
+            
+        </style>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <!-- <script src="./todo.js"></script> -->
+    </head>
+    <body style="background-color: powderblue;">
+        <h1> Week1 Practical tasks</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>tags</th>
+                <th>element</th>
+            </tr>
+            <tr>
+                <th>Header1</th>
+                <th>"h1"</th>
+                <th><h1 style="color: red;">This is header1 with inline css</h1></th>
+            </tr>
+            <tr>
+                <th>header2</th>
+                <th>"h2"</th>
+                <th><h2>This is header2 with internal css</h2></th>
+            </tr>
+            <tr>
+                <th>header3</th>
+                <th>"h3"</th>
+                <th><h3>This is header3 with external css</h3></th>
+            </tr>
+            <tr>
+                <th>header4</th>
+                <th>"h4"</th>
+                <th><h4>This is header4 with external css</h4></th>
+            </tr>
+            <tr>
+                <th>header5</th>
+                <th>"h5"</th>
+                <th><h5>This is header5</h5></th>
+            </tr>
+
+        </table>
+            
+           
+            <h5>This is header5</h5>
+            <p>The Javascript below this is a button that shows date and time</p>
+        <button type="button"
+                onclick="document.getElementById('demo').innerHTML = Date()">
+                This is a JS script.</button>
+        <p id="demo"></p>
+
+        
+        <div id="app">
+           <div>{{todos}}</div>
+            <div
+                v-for="todo in todos"
+                :key="todo.title"
+                :style="{ textDecoration: todo.checked? 'line-through':'none' }"
+            >
+                <input type="checkbox" v-model="todo.checked"/>
+                {{todo.title}}
+            </div>
+        </div>
+
+        <div id="app">
+            {{ message }}
+          </div>
+
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                message: 'Hello Vue!'
+                }
+            })
+        </script>
+        
+    </body>
+</html>
+<script src="./todo.js"></script>
